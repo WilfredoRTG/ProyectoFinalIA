@@ -82,10 +82,10 @@ historial = model.fit(imagenesProcesadas, indicesDeRazas, epochs=40, verbose=Fal
 
 # En esta gráfica se puede ver como la red va aprendiendo durante todas las vueltas que va haciendo, como se menciono antes,
 # se puede apreciar un punto donde la red ya no esta aprendiendo, pero este no es mucho.
-plt.xlabel('#Epoca')
-plt.ylabel('Perdida')
-plt.plot(historial.history['loss'])
-plt.show()
+# plt.xlabel('#Epoca')
+# plt.ylabel('Perdida')
+# plt.plot(historial.history['loss'])
+# plt.show()
 
 # Se hace un test para probar que tan bien esta entrenado el modelo, para esto se usa el método evaluate simplemente pasando
 # el arreglo de imágenes y sus índices, asi como cuando entrenamos el modelo verbose se declara como falso para evitar las impresiones
@@ -100,10 +100,10 @@ probability_model = Sequential([
 
 # Ahora se realiza las predicciones
 predicciones = probability_model.predict(imagenesProcesadas)
-print("\nIntento de prediccion a primera imagen de Golden Doodle")
+print("\nIntento de prediccion para la primera imagen de Golden Doodle\n")
 
 # Se esta haciendo una predicción para la primera imagen la cual corresponde a la raza de perro Golden Doodle, utilizando 
-# np.argmax podemos obtener el numero mas alto, en otras palabras la predicción con la cual el modelo tiene mas confianza
+# np.argmax podemos obtener el numero mas alto, en otras palabras la predicción del modelo
 razaPre = razas[np.argmax(predicciones[0])]
 
 # Se hace una comparacion para ver si la prediccion es correcta
